@@ -1,6 +1,6 @@
 # Robo_farm
 
-Click link toc check it out! 🤖
+Click link to check it out! 🤖
 https://michieladriaansens.github.io/Robo_farm/
 
 An React assignment from ZtM course. It was an old assignment, still using classes and constructors to make components.
