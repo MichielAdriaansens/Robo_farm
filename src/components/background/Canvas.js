@@ -4,6 +4,7 @@ import Matrix from './Matrix';
 function Canvas() {
     const canvasRef = useRef(null);
     const [gotCanvas, setGotCanvas] = useState(false);
+    const [canvasSize, setCanvasSize] = useState({ x: window.innerWidth, y: window.innerHeight });
 
     useEffect(() => {
 
@@ -14,7 +15,9 @@ function Canvas() {
         canvasRef.current.height = window.innerHeight;
 
         async function resizeHandler() {
-            window.location.reload(false);
+            setCanvasSize({ x: window.innerWidth, y: window.innerHeight });
+            canvasRef.current.width = window.innerWidth;
+            canvasRef.current.height = window.innerHeight;
         }
         window.addEventListener("resize", resizeHandler);
 
@@ -31,7 +34,7 @@ function Canvas() {
                 className="bg"
             />
             {gotCanvas ?
-                <Matrix _canvas={canvasRef} /> : "static background"
+                <Matrix _canvas={canvasRef} canvasSize={canvasSize} /> : "static background"
             }
 
         </>);

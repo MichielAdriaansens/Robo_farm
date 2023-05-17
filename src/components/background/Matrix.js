@@ -1,13 +1,14 @@
-function Matrix({ _canvas }) {
+function Matrix({ _canvas, canvasSize }) {
     const canvas = _canvas;
     const ctx = canvas.current.getContext('2d');
+    let recursiveBreak = false;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    // window.addEventListener('resize', () => {
-    //     canvas.width = window.document.body.clientWidth;
-    //     canvas.height = window.innerHeight;
-    // });
+    canvas.width = canvasSize.x;
+    canvas.height = canvasSize.y;
+
+    const setRecursiveBreak = () => { recursiveBreak = true };
+
+    window.addEventListener('resize', setRecursiveBreak);
 
     class Symbol {
         constructor(x, y, fontSize, canvasHeight) {
@@ -59,6 +60,8 @@ function Matrix({ _canvas }) {
     let timer = 0;
 
     function animate(timeStamp) {
+        if (recursiveBreak) { return window.removeEventListener('resize', setRecursiveBreak); }
+
         const deltaTime = timeStamp - lastTime;
         lastTime = timeStamp;
         if (timer > nextFrame) {
