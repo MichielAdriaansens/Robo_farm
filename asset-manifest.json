@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Robo_farm/static/css/main.3c547f4e.css",
-    "main.js": "/Robo_farm/static/js/main.bd803369.js",
+    "main.js": "/Robo_farm/static/js/main.3144c4fa.js",
     "static/media/SEGA.woff": "/Robo_farm/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
     "index.html": "/Robo_farm/index.html",
     "main.3c547f4e.css.map": "/Robo_farm/static/css/main.3c547f4e.css.map",
-    "main.bd803369.js.map": "/Robo_farm/static/js/main.bd803369.js.map"
+    "main.3144c4fa.js.map": "/Robo_farm/static/js/main.3144c4fa.js.map"
   },
   "entrypoints": [
     "static/css/main.3c547f4e.css",
-    "static/js/main.bd803369.js"
+    "static/js/main.3144c4fa.js"
   ]
 }
